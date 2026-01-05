@@ -1,4 +1,4 @@
-name: SSH Test
+name: Test Runner
 
 on:
   workflow_dispatch:
@@ -7,13 +7,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Test SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.GCP_HOST }}
-          username: ${{ secrets.GCP_USER }}
-          key: ${{ secrets.GCP_SSH_KEY }}
-          script: |
-            echo "CONNECTED"
-            whoami
-            hostname
+      - run: echo "Runner works"
