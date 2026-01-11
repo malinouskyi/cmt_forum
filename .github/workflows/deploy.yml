@@ -35,7 +35,7 @@ jobs:
           key: ${{ secrets.GCP_SSH_KEY }}
           script: |
             cd /var/discourse
-            sudo git config --global --add safe.directory /var/discourse
+            sudo git config --system --add safe.directory /var/discourse
             git fetch --all
             git reset --hard origin/main
             sudo ./launcher rebuild app
