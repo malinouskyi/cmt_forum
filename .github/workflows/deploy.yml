@@ -17,13 +17,13 @@ jobs:
 
       # Если есть тесты – добавьте тут
       - name: Placeholder tests
-        timeout-minutes: 60
         run: echo "No tests yet"
 
   deploy:
     if: github.ref == 'refs/heads/main'
     needs: test
     runs-on: ubuntu-latest
+    timeout-minutes: 120
 
     steps:
       - uses: actions/checkout@v4
@@ -39,5 +39,3 @@ jobs:
             sudo git config --system --add safe.directory /var/discourse
             sudo git fetch --all
             sudo git reset --hard origin/main
-            sudo ./launcher rebuild app
-            sudo ./launcher restart app
