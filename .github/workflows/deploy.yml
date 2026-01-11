@@ -17,6 +17,7 @@ jobs:
 
       # Если есть тесты – добавьте тут
       - name: Placeholder tests
+        timeout-minutes: 60
         run: echo "No tests yet"
 
   deploy:
