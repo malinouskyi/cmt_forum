@@ -36,7 +36,7 @@ jobs:
           script: |
             cd /var/discourse
             sudo git config --system --add safe.directory /var/discourse
-            git fetch --all
-            git reset --hard origin/main
+            sudo git fetch --all
+            sudo git reset --hard origin/main
             sudo ./launcher rebuild app
             sudo ./launcher restart app
